@@ -83,22 +83,14 @@ public class Main {
     }
         if(!encontrado){
             System.out.println("usuario no encontrado");
-        }
+        }    
 }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    public static void eliminarCliente() {
+        System.out.println("ingrese el id del usuario a actualizar: ");
+        String idBuscado = sc.nextLine();
+
+        clientes.removeIf(c->c.getId().equals(idBuscado));
+        System.out.println("usuario eliminado");
+}
 }
