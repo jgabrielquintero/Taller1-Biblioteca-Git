@@ -57,6 +57,35 @@ public class Main {
 }
     
     
+    public static void actualizarCliente() {
+        System.out.println("ingrese el id del usuario a actualizar: ");
+        String idBuscado = sc.nextLine();
+        
+        boolean encontrado=false;
+        
+        for (Cliente c : clientes) {
+            if(c.getId().equals(idBuscado)){
+            System.out.print("Ingrese el nombre: ");
+            String nombre = sc.nextLine();
+    
+            System.out.print("Ingrese el telefono: ");
+            String telefono = sc.nextLine();
+       
+            System.out.print("Ingrese el email: ");
+            String email = sc.nextLine();
+            
+            c.setNombre(nombre);
+            c.setTelefono(telefono);
+            c.setEmail(email);
+            
+            encontrado=true;
+            }
+    }
+        if(!encontrado){
+            System.out.println("usuario no encontrado");
+        }
+}
+    
     
     
     
