@@ -12,11 +12,46 @@ public class Main {
     }
     
     public static void crearCliente() {
+        
     System.out.print("Ingrese el id: ");
     String id = sc.nextLine();
+    
     System.out.print("Ingrese el nombre: ");
     String nombre = sc.nextLine();
+    
     System.out.print("Ingrese el telefono: ");
     String telefono = sc.nextLine();
+       
+    System.out.print("Ingrese el email: ");
+    String email = sc.nextLine();
+    
+    Cliente c = new Cliente(id, nombre, telefono, email);
+    clientes.add(c);
+    
+    System.out.print("cliente registrado con exito");    
 }
+    
+    public static void listarClientes() {
+    for (Cliente c : clientes) {
+    System.out.println("ID: " + c.getId() + ", Nombre: " + c.getNombre()
+            + ", Telefono: " + c.getTelefono() + ", Email: " + c.getEmail());
+}
+}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
