@@ -38,6 +38,24 @@ public class Main {
 }
 }
     
+    public static void buscarCliente() {
+        System.out.println("ingrese el id del usuario a buscar: ");
+        String idBuscado = sc.nextLine();
+        
+        boolean encontrado=false;
+        
+        for (Cliente c : clientes) {
+            if(c.getId().equals(idBuscado)){
+            System.out.println("ID: " + c.getId() + ", Nombre: " + c.getNombre()
+            + ", Telefono: " + c.getTelefono() + ", Email: " + c.getEmail());
+            encontrado=true;
+            }
+    }
+        if(!encontrado){
+            System.out.println("usuario no encontrado");
+        }
+}
+    
     
     
     
