@@ -114,7 +114,13 @@ public class Main {
     System.out.println("Libro registrado");
 }
     
-    
+public static void listarLibros() {
+    for (Libro l : libros) {
+        System.out.println("Codigo: " + l.getCodigo() + ", Titulo: " + l.getTitulo()
+                + ", Año de publicacion: " + l.getAnioPublic() + ", Autor: " + l.getAutor()
+                + ", Disponible: " + l.getDisponible());
+    }
+}
     
     
     
