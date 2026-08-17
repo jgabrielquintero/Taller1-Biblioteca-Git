@@ -5,7 +5,7 @@ public class Cliente extends Persona {
 
     public Cliente(String id, String nombre, String telefono, String email) {
         super(id, nombre, telefono);
-        // aquí falta guardar el email
+        this.email = email;
     }
 
 public String getEmail() {
