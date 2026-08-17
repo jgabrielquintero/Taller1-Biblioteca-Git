@@ -122,7 +122,24 @@ public static void listarLibros() {
     }
 }
     
-    
+        public static void buscarLibro() {
+        System.out.println("ingrese el codigo del libro a buscar: ");
+        String codigoBuscado = sc.nextLine();
+        
+        boolean encontrado=false;
+        
+        for (Libro l : libros) {
+            if(l.getCodigo().equals(codigoBuscado)){
+            System.out.println("Codigo: " + l.getCodigo() + ", Titulo: " + l.getTitulo()
+                + ", Año de publicacion: " + l.getAnioPublic() + ", Autor: " + l.getAutor()
+                + ", Disponible: " + l.getDisponible());
+            encontrado=true;
+            }
+    }
+        if(!encontrado){
+            System.out.println("libro no encontrado");
+        }
+}
     
     
     
