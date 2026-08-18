@@ -141,7 +141,39 @@ public static void listarLibros() {
         }
 }
     
-    
+        public static void actualizarLibro() {
+        System.out.println("ingrese el codigo del libro a actualizar: ");
+        String codigoBuscado = sc.nextLine();
+        
+        boolean encontrado=false;
+        
+        for (Libro l : libros) {
+            if(l.getCodigo().equals(codigoBuscado)){
+            System.out.print("Ingrese el titulo: ");
+            String titulo = sc.nextLine();
+
+            System.out.print("Ingrese el año de publicacion: ");
+            String anioPublic = sc.nextLine();
+
+            System.out.print("Ingrese el autor: ");
+            String autor = sc.nextLine();
+            
+            System.out.print("sigue disponible?(true/false) : ");
+            String disponibleTexto = sc.nextLine();
+            boolean disponible = Boolean.parseBoolean(disponibleTexto);
+            
+            l.setTitulo(titulo);
+            l.setAnioPublic(anioPublic);
+            l.setAutor(autor);
+            l.setDisponible(disponible);
+            
+            encontrado=true;
+            }
+    }
+        if(!encontrado){
+            System.out.println("usuario no encontrado");
+        }    
+}
     
     
 }
