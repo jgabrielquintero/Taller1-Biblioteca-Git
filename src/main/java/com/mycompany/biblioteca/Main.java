@@ -10,9 +10,141 @@ public class Main {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        // Aquí irá el menú (Fase 8)
+    int opcion;
+    do {
+        System.out.println("\n--- MENU PRINCIPAL ---");
+        System.out.println("1. Gestion de Clientes");
+        System.out.println("2. Gestion de Libros");
+        System.out.println("3. Gestion de Prestamos");
+        System.out.println("0. Salir");
+        System.out.print("Elija una opcion: ");
+        opcion = Integer.parseInt(sc.nextLine());
+
+        switch (opcion) {
+            case 1:
+                menuClientes();
+                break;
+            case 2:
+                menuLibros();
+                break;
+            case 3:
+                menuPrestamos();
+                break;
+            case 0:
+                System.out.println("Saliendo del sistema...");
+                break;
+            default:
+                System.out.println("Opcion invalida");
+        }
+    } while (opcion != 0);
     }
     
+    public static void menuClientes() {
+    int opcion;
+    do {
+        System.out.println("\n--- GESTION DE CLIENTES ---");
+        System.out.println("1. Crear cliente");
+        System.out.println("2. Listar clientes");
+        System.out.println("3. Buscar cliente");
+        System.out.println("4. Actualizar cliente");
+        System.out.println("5. Eliminar cliente");
+        System.out.println("0. Volver al menu principal");
+        System.out.print("Elija una opcion: ");
+        opcion = Integer.parseInt(sc.nextLine());
+
+        switch (opcion) {
+            case 1:
+                crearCliente();
+                break;
+            case 2:
+                listarClientes();
+                break;
+            case 3:
+                buscarCliente();
+                break;
+            case 4:
+                actualizarCliente();
+                break;
+            case 5:
+                eliminarCliente();
+                break;
+            case 0:
+                System.out.println("Volviendo al menu principal...");
+                break;
+            default:
+                System.out.println("Opcion invalida");
+        }
+    } while (opcion != 0);
+    }
+    
+    public static void menuLibros() {
+    int opcion;
+    do {
+        System.out.println("\n--- GESTION DE LIBROS ---");
+        System.out.println("1. Crear libro");
+        System.out.println("2. Listar libros");
+        System.out.println("3. Buscar libro");
+        System.out.println("4. Actualizar libro");
+        System.out.println("5. Eliminar libro");
+        System.out.println("0. Volver al menu principal");
+        System.out.print("Elija una opcion: ");
+        opcion = Integer.parseInt(sc.nextLine());
+
+        switch (opcion) {
+            case 1:
+                crearLibro();
+                break;
+            case 2:
+                listarLibros();
+                break;
+            case 3:
+                buscarLibro();
+                break;
+            case 4:
+                actualizarLibro();
+                break;
+            case 5:
+                eliminarLibro();
+                break;
+            case 0:
+                System.out.println("Volviendo al menu principal...");
+                break;
+            default:
+                System.out.println("Opcion invalida");
+        }
+    } while (opcion != 0);
+}
+    
+    public static void menuPrestamos() {
+    int opcion;
+    do {
+        System.out.println("\n--- GESTION DE PRESTAMOS ---");
+        System.out.println("1. Registrar prestamo");
+        System.out.println("2. Registrar devolucion");
+        System.out.println("3. Listar prestamos");
+        System.out.println("0. Volver al menu principal");
+        System.out.print("Elija una opcion: ");
+        opcion = Integer.parseInt(sc.nextLine());
+
+        switch (opcion) {
+            case 1:
+                crearPrestamo();
+                break;
+            case 2:
+                devolucionPrestamo();
+                break;
+            case 3:
+                listarPrestamos();
+                break;
+            case 0:
+                System.out.println("Volviendo al menu principal...");
+                break;
+            default:
+                System.out.println("Opcion invalida");
+        }
+    } while (opcion != 0);
+}
+   
     public static void crearCliente() {
         
     System.out.print("Ingrese el id: ");
@@ -267,8 +399,5 @@ public class Main {
         + p.getCliente().getNombre() + ", Libro: " + p.getLibro().getTitulo()
         + ", Fecha: " + p.getFecha() + ", Estado: " + p.getEstado());
     }
-}
-    
-    
-    
+}  
 }
