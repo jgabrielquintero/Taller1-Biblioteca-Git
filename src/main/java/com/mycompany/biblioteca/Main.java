@@ -88,7 +88,7 @@ public class Main {
 }
     
     public static void eliminarCliente() {
-        System.out.println("ingrese el id del usuario a actualizar: ");
+        System.out.println("ingrese el id del usuario a eliminar: ");
         String idBuscado = sc.nextLine();
 
         clientes.removeIf(c->c.getId().equals(idBuscado));
@@ -175,5 +175,12 @@ public static void listarLibros() {
         }    
 }
     
+            public static void eliminarLibro() {
+        System.out.println("ingrese el codigo del libro a eliminar: ");
+        String codigoBuscado = sc.nextLine();
+
+        libros.removeIf(l->l.getCodigo().equals(codigoBuscado));
+        System.out.println("libro eliminado");
+}
     
 }
