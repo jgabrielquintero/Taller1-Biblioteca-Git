@@ -1,26 +1,26 @@
 package com.mycompany.biblioteca;
 
 public class Material {
-    protected String codigo;
-    protected String titulo;
-    protected String anioPublic;
+    protected String code;
+    protected String title;
+    protected String publicationYear;
     
-    public Material(String Codigo, String Titulo, String AnioPublic){
-    this.codigo=Codigo;
-    this.titulo=Titulo;
-    this.anioPublic=AnioPublic;
+    public Material(String code, String title, String publicationYear){
+    this.code=code;
+    this.title=title;
+    this.publicationYear=publicationYear;
 }
-    public String getCodigo(){
-    return codigo;}
-    public String getTitulo(){
-    return titulo;}
-    public String getAnioPublic(){
-    return anioPublic;}
+    public String getCode(){
+    return code;}
+    public String getTitle(){
+    return title;}
+    public String getPublicationYear(){
+    return publicationYear;}
     
-    public void setCodigo(String codigo){
-    this.codigo= codigo;}
-    public void setTitulo(String titulo){
-    this.titulo=titulo;}
-    public void setAnioPublic(String anioPublic){
-    this.anioPublic=anioPublic;}
+    public void setCode(String code){
+    this.code= code;}
+    public void setTitle(String title){
+    this.title=title;}
+    public void setPublicationYear(String publicationYear){
+    this.publicationYear=publicationYear;}
 }

@@ -1,20 +1,20 @@
-## Sistema de Gestión de Biblioteca
+## Library Management System
 
-Taller 1 - Programación de Computadores III - UPC
+Assignment 1 - Programming III - UPC
 
-## Autor
+## Author
 José Gabriel Quintero Ortiz - jgabrielquintero
 
-## Descripción
-Aplicación de consola en Java para gestionar clientes, libros y préstamos
-de una biblioteca. Almacenamiento en memoria (ArrayList).
+## Description
+Console application in Java to manage clients, books, and loans
+for a library. In-memory storage (ArrayList).
 
-## Cómo ejecutar
-1. Abrir el proyecto en NetBeans
-2. Compilar con Maven
-3. Ejecutar Main.java
+## How to run
+1. Open the project in NetBeans
+2. Build with Maven
+3. Run Main.java
 
-## Funcionalidades
-- CRUD de Clientes
-- CRUD de Libros
-- Registro de préstamos y devoluciones
+## Features
+- Client CRUD
+- Book CRUD
+- Loan registration and returnséstamos y devoluciones
