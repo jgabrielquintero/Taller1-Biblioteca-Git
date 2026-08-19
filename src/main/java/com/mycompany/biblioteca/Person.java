@@ -1,11 +1,11 @@
 package com.mycompany.biblioteca;
 
-public class Persona {
+public class Person {
     protected String id;
     protected String nombre;
     protected String telefono;
     
-    public Persona(String id, String nombre, String telefono) {
+    public Person(String id, String nombre, String telefono) {
     this.id = id;
     this.nombre = nombre;
     this.telefono = telefono;

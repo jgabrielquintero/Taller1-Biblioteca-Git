@@ -1,10 +1,10 @@
 package com.mycompany.biblioteca;
 
-public class Libro extends Material {
+public class Book extends Material {
     protected String autor;
     protected boolean disponible;
 
-    public Libro(String codigo, String titulo, String anioPublic, String autor) {
+    public Book(String codigo, String titulo, String anioPublic, String autor) {
         super(codigo, titulo, anioPublic);
         this.autor = autor;
         this.disponible = true;

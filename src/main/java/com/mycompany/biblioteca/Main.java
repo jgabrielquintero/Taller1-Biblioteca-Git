@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    static ArrayList<Cliente> clientes = new ArrayList<>();
-    static ArrayList<Libro> libros = new ArrayList<>();
-    static ArrayList<Prestamo> prestamos = new ArrayList<>();
+    static ArrayList<Client> clientes = new ArrayList<>();
+    static ArrayList<Book> libros = new ArrayList<>();
+    static ArrayList<Loan> prestamos = new ArrayList<>();
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -159,14 +159,14 @@ public class Main {
     System.out.print("Ingrese el email: ");
     String email = sc.nextLine();
     
-    Cliente c = new Cliente(id, nombre, telefono, email);
+    Client c = new Client(id, nombre, telefono, email);
     clientes.add(c);
     
     System.out.println("cliente registrado con exito");    
     }
     
     public static void listarClientes() {
-    for (Cliente c : clientes) {
+    for (Client c : clientes) {
     System.out.println("ID: " + c.getId() + ", Nombre: " + c.getNombre()
         + ", Telefono: " + c.getTelefono() + ", Email: " + c.getEmail());
     }
@@ -178,7 +178,7 @@ public class Main {
         
         boolean encontrado=false;
         
-        for (Cliente c : clientes) {
+        for (Client c : clientes) {
             if(c.getId().equals(idBuscado)){
             System.out.println("ID: " + c.getId() + ", Nombre: " + c.getNombre()
             + ", Telefono: " + c.getTelefono() + ", Email: " + c.getEmail());
@@ -197,7 +197,7 @@ public class Main {
         
         boolean encontrado=false;
         
-        for (Cliente c : clientes) {
+        for (Client c : clientes) {
             if(c.getId().equals(idBuscado)){
             System.out.print("Ingrese el nombre: ");
             String nombre = sc.nextLine();
@@ -241,14 +241,14 @@ public class Main {
     System.out.print("Ingrese el autor: ");
     String autor = sc.nextLine();
 
-    Libro l = new Libro(codigo, titulo, anioPublic, autor);
+    Book l = new Book(codigo, titulo, anioPublic, autor);
     libros.add(l);
 
     System.out.println("Libro registrado");
     }
     
     public static void listarLibros() {
-        for (Libro l : libros) {
+        for (Book l : libros) {
         System.out.println("Codigo: " + l.getCodigo() + ", Titulo: " + l.getTitulo()
             + ", Año de publicacion: " + l.getAnioPublic() + ", Autor: " + l.getAutor()
             + ", Disponible: " + l.getDisponible());
@@ -261,7 +261,7 @@ public class Main {
         
         boolean encontrado=false;
         
-        for (Libro l : libros) {
+        for (Book l : libros) {
             if(l.getCodigo().equals(codigoBuscado)){
             System.out.println("Codigo: " + l.getCodigo() + ", Titulo: " + l.getTitulo()
                 + ", Año de publicacion: " + l.getAnioPublic() + ", Autor: " + l.getAutor()
@@ -280,7 +280,7 @@ public class Main {
         
         boolean encontrado=false;
         
-        for (Libro l : libros) {
+        for (Book l : libros) {
             if(l.getCodigo().equals(codigoBuscado)){
             System.out.print("Ingrese el titulo: ");
             String titulo = sc.nextLine();
@@ -316,8 +316,8 @@ public class Main {
         System.out.println("libro eliminado");
     }
     
-    public static Cliente buscarClientePorId(String id) {
-        for (Cliente c : clientes) {
+    public static Client buscarClientePorId(String id) {
+        for (Client c : clientes) {
         if (c.getId().equals(id)) {
             return c;
         }
@@ -325,8 +325,8 @@ public class Main {
         return null;
     }
     
-    public static Libro buscarLibroPorCodigo(String codigo){
-        for (Libro l : libros){
+    public static Book buscarLibroPorCodigo(String codigo){
+        for (Book l : libros){
         if (l.getCodigo().equals(codigo)){
             return l;
         }
@@ -337,7 +337,7 @@ public class Main {
     public static void crearPrestamo() {
         System.out.print("ingrese el id: ");
         String idCliente = sc.nextLine();
-        Cliente cliente = buscarClientePorId(idCliente);
+        Client cliente = buscarClientePorId(idCliente);
 
         if (cliente == null) {
         System.out.println("no encontrado");
@@ -345,7 +345,7 @@ public class Main {
         }
         System.out.println("ingrese el codigo del libro: ");
         String codigoLibro = sc.nextLine();
-        Libro libro = buscarLibroPorCodigo(codigoLibro);
+        Book libro = buscarLibroPorCodigo(codigoLibro);
         
         if(libro==null){
         System.out.println("no encontrado");
@@ -360,7 +360,7 @@ public class Main {
         System.out.print("Ingrese el id del prestamo: ");
         String idPrestamo = sc.nextLine();
         
-        Prestamo p = new Prestamo(idPrestamo, cliente, libro, "activo");
+        Loan p = new Loan(idPrestamo, cliente, libro, "activo");
         prestamos.add(p);
         libro.setDisponible(false);
         
@@ -373,7 +373,7 @@ public class Main {
 
     boolean encontrado = false;
 
-    for (Prestamo p : prestamos) {
+    for (Loan p : prestamos) {
         if (p.getIdPrestamo().equals(idBuscado)) {
             p.setEstado("devuelto");
             p.getLibro().setDisponible(true);
@@ -394,7 +394,7 @@ public class Main {
         return;
     }
 
-    for (Prestamo p : prestamos) {
+    for (Loan p : prestamos) {
         System.out.println("Id prestamo: " + p.getIdPrestamo() + ", Cliente: " 
         + p.getCliente().getNombre() + ", Libro: " + p.getLibro().getTitulo()
         + ", Fecha: " + p.getFecha() + ", Estado: " + p.getEstado());

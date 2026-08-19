@@ -1,14 +1,14 @@
 package com.mycompany.biblioteca;
 import java.time.LocalDate;
 
-public class Prestamo {
+public class Loan {
     protected String idPrestamo;
-    protected Cliente cliente;
-    protected Libro libro;
+    protected Client cliente;
+    protected Book libro;
     protected String estado;
     protected LocalDate fecha;
     
-    public Prestamo(String idPrestamo, Cliente cliente, Libro libro, String estado){
+    public Loan(String idPrestamo, Client cliente, Book libro, String estado){
     this.idPrestamo=idPrestamo;
     this.cliente=cliente;
     this.libro=libro;
@@ -18,9 +18,9 @@ public class Prestamo {
     
     public String getIdPrestamo(){
     return idPrestamo;}
-    public Cliente getCliente(){
+    public Client getCliente(){
     return cliente;}
-    public Libro getLibro(){
+    public Book getLibro(){
     return libro;}
     public String getEstado(){
     return estado;}    
@@ -29,9 +29,9 @@ public class Prestamo {
     
     public void setIdPrestamo(String idPrestamo){
     this.idPrestamo=idPrestamo;}
-    public void setCliente(Cliente cliente){
+    public void setCliente(Client cliente){
     this.cliente=cliente;}
-    public void setLibro(Libro libro){
+    public void setLibro(Book libro){
     this.libro=libro;}
     public void setEstado(String estado){
     this.estado=estado;}
