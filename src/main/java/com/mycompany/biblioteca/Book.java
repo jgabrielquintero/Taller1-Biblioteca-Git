@@ -13,7 +13,7 @@ public class Book extends Material {
     public String getAuthor() {
         return author;
     }
-    public boolean getDisponible() {
+    public boolean getAvailable() {
         return available;
     }
     public void setAuthor(String author) {
