@@ -1,25 +1,25 @@
 package com.mycompany.biblioteca;
 
 public class Book extends Material {
-    protected String autor;
-    protected boolean disponible;
+    protected String author;
+    protected boolean available;
 
-    public Book(String codigo, String titulo, String anioPublic, String autor) {
-        super(codigo, titulo, anioPublic);
-        this.autor = autor;
-        this.disponible = true;
+    public Book(String code, String title, String publicationYear, String author) {
+        super(code, title, publicationYear);
+        this.author = author;
+        this.available = true;
     }
 
-    public String getAutor() {
-        return autor;
+    public String getAuthor() {
+        return author;
     }
     public boolean getDisponible() {
-        return disponible;
+        return available;
     }
-    public void setAutor(String autor) {
-        this.autor = autor;
+    public void setAuthor(String author) {
+        this.author = author;
     }
-    public void setDisponible(boolean disponible) {
-        this.disponible = disponible;
+    public void setAvailable(boolean available) {
+        this.available = available;
     }
 }

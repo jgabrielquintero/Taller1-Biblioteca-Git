@@ -167,8 +167,8 @@ public class Main {
     
     public static void listarClientes() {
     for (Client c : clientes) {
-    System.out.println("ID: " + c.getId() + ", Nombre: " + c.getNombre()
-        + ", Telefono: " + c.getTelefono() + ", Email: " + c.getEmail());
+    System.out.println("ID: " + c.getId() + ", Nombre: " + c.getName()
+        + ", Telefono: " + c.getPhone() + ", Email: " + c.getEmail());
     }
     }
     
@@ -180,8 +180,8 @@ public class Main {
         
         for (Client c : clientes) {
             if(c.getId().equals(idBuscado)){
-            System.out.println("ID: " + c.getId() + ", Nombre: " + c.getNombre()
-            + ", Telefono: " + c.getTelefono() + ", Email: " + c.getEmail());
+            System.out.println("ID: " + c.getId() + ", Nombre: " + c.getName()
+            + ", Telefono: " + c.getPhone() + ", Email: " + c.getEmail());
             encontrado=true;
             }
         }
@@ -208,8 +208,8 @@ public class Main {
             System.out.print("Ingrese el email: ");
             String email = sc.nextLine();
             
-            c.setNombre(nombre);
-            c.setTelefono(telefono);
+            c.setName(nombre);
+            c.setPhone(telefono);
             c.setEmail(email);
             
             encontrado=true;
@@ -249,8 +249,8 @@ public class Main {
     
     public static void listarLibros() {
         for (Book l : libros) {
-        System.out.println("Codigo: " + l.getCodigo() + ", Titulo: " + l.getTitulo()
-            + ", Año de publicacion: " + l.getAnioPublic() + ", Autor: " + l.getAutor()
+        System.out.println("Codigo: " + l.getCode() + ", Titulo: " + l.getTitle()
+            + ", Año de publicacion: " + l.getPublicationYear() + ", Autor: " + l.getAuthor()
             + ", Disponible: " + l.getDisponible());
         }
     }
@@ -262,9 +262,9 @@ public class Main {
         boolean encontrado=false;
         
         for (Book l : libros) {
-            if(l.getCodigo().equals(codigoBuscado)){
-            System.out.println("Codigo: " + l.getCodigo() + ", Titulo: " + l.getTitulo()
-                + ", Año de publicacion: " + l.getAnioPublic() + ", Autor: " + l.getAutor()
+            if(l.getCode().equals(codigoBuscado)){
+            System.out.println("Codigo: " + l.getCode() + ", Titulo: " + l.getTitle()
+                + ", Año de publicacion: " + l.getPublicationYear() + ", Autor: " + l.getAuthor()
                 + ", Disponible: " + l.getDisponible());
             encontrado=true;
             }
@@ -281,7 +281,7 @@ public class Main {
         boolean encontrado=false;
         
         for (Book l : libros) {
-            if(l.getCodigo().equals(codigoBuscado)){
+            if(l.getCode().equals(codigoBuscado)){
             System.out.print("Ingrese el titulo: ");
             String titulo = sc.nextLine();
 
@@ -295,10 +295,10 @@ public class Main {
             String disponibleTexto = sc.nextLine();
             boolean disponible = Boolean.parseBoolean(disponibleTexto);
             
-            l.setTitulo(titulo);
-            l.setAnioPublic(anioPublic);
-            l.setAutor(autor);
-            l.setDisponible(disponible);
+            l.setTitle(titulo);
+            l.setPublicationYear(anioPublic);
+            l.setAuthor(autor);
+            l.setAvailable(disponible);
             
             encontrado=true;
             }
@@ -312,7 +312,7 @@ public class Main {
         System.out.println("ingrese el codigo del libro a eliminar: ");
         String codigoBuscado = sc.nextLine();
 
-        libros.removeIf(l->l.getCodigo().equals(codigoBuscado));
+        libros.removeIf(l->l.getCode().equals(codigoBuscado));
         System.out.println("libro eliminado");
     }
     
@@ -327,7 +327,7 @@ public class Main {
     
     public static Book buscarLibroPorCodigo(String codigo){
         for (Book l : libros){
-        if (l.getCodigo().equals(codigo)){
+        if (l.getCode().equals(codigo)){
             return l;
         }
         }
@@ -362,7 +362,7 @@ public class Main {
         
         Loan p = new Loan(idPrestamo, cliente, libro, "activo");
         prestamos.add(p);
-        libro.setDisponible(false);
+        libro.setAvailable(false);
         
         System.out.println("Prestamo exitoso");
     }
@@ -374,9 +374,9 @@ public class Main {
     boolean encontrado = false;
 
     for (Loan p : prestamos) {
-        if (p.getIdPrestamo().equals(idBuscado)) {
-            p.setEstado("devuelto");
-            p.getLibro().setDisponible(true);
+        if (p.getLoanId().equals(idBuscado)) {
+            p.setStatus("devuelto");
+            p.getBook().setAvailable(true);
             encontrado = true;
         }
     }
@@ -395,9 +395,9 @@ public class Main {
     }
 
     for (Loan p : prestamos) {
-        System.out.println("Id prestamo: " + p.getIdPrestamo() + ", Cliente: " 
-        + p.getCliente().getNombre() + ", Libro: " + p.getLibro().getTitulo()
-        + ", Fecha: " + p.getFecha() + ", Estado: " + p.getEstado());
+        System.out.println("Id prestamo: " + p.getLoanId() + ", Cliente: " 
+        + p.getClient().getName() + ", Libro: " + p.getBook().getTitle()
+        + ", Fecha: " + p.getDate() + ", Estado: " + p.getStatus());
     }
 }  
 }
